@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
 export class ServiceService {
@@ -21,7 +20,7 @@ export class ServiceService {
   }
 
   async remove(id: number) {
-    return this.prisma.concierge.delete({
+    return this.prisma.service.delete({
       where: { id },
     });
   }
