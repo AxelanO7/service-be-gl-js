@@ -7,7 +7,7 @@ import { SubCategoryModule } from './sub-category/sub-category.module';
 import { LocationModule } from './location/location.module';
 
 @Module({
-  imports: [CategoryModule, SubCategoryModule, LocationModule],
+  imports: [CategoryModule, SubCategoryModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
   exports: [PrismaService],
