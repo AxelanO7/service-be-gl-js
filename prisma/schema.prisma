@@ -11,20 +11,20 @@ datasource db {
 model Category {
   id          String        @id @default(uuid())
   name        String
-  Subcategory SubCategory[]
-  Service     Service[]
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
+  Service     Service[]
+  Subcategory SubCategory[]
 }
 
 model SubCategory {
   id         String    @id @default(uuid())
   name       String
   categoryId String
-  category   Category  @relation(fields: [categoryId], references: [id])
-  Service    Service[]
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
+  Service    Service[]
+  category   Category  @relation(fields: [categoryId], references: [id])
 }
 
 model Location {
@@ -36,9 +36,9 @@ model Location {
   state     String
   province  String
   country   String
-  Service   Service[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+  Service   Service[]
 }
 
 model Price {
@@ -46,9 +46,9 @@ model Price {
   original  Float
   discount  Float
   final     Float
-  Service   Service[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+  Service   Service[]
 }
 
 model Service {
@@ -56,13 +56,13 @@ model Service {
   name          String
   description   String
   locationId    String
-  Location      Location    @relation(fields: [locationId], references: [id])
   priceId       String
-  Price         Price       @relation(fields: [priceId], references: [id])
   categoryId    String
-  Category      Category    @relation(fields: [categoryId], references: [id])
   subCategoryId String
-  SubCategory   SubCategory @relation(fields: [subCategoryId], references: [id])
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
+  Category      Category    @relation(fields: [categoryId], references: [id])
+  Location      Location    @relation(fields: [locationId], references: [id])
+  Price         Price       @relation(fields: [priceId], references: [id])
+  SubCategory   SubCategory @relation(fields: [subCategoryId], references: [id])
 }
