@@ -9,26 +9,26 @@ datasource db {
 }
 
 model Category {
-  id          String        @id
+  id          String        @id @default(uuid())
   name        String
   Subcategory SubCategory[]
   Service     Service[]
   createdAt   DateTime      @default(now())
-  updatedAt   DateTime
+  updatedAt   DateTime      @updatedAt
 }
 
 model SubCategory {
-  id         String    @id
+  id         String    @id @default(uuid())
   name       String
   categoryId String
   category   Category  @relation(fields: [categoryId], references: [id])
   Service    Service[]
   createdAt  DateTime  @default(now())
-  updatedAt  DateTime
+  updatedAt  DateTime  @updatedAt
 }
 
 model Location {
-  id        String    @id
+  id        String    @id @default(uuid())
   latitude  Float
   longitude Float
   address   String
@@ -38,21 +38,21 @@ model Location {
   country   String
   Service   Service[]
   createdAt DateTime  @default(now())
-  updatedAt DateTime
+  updatedAt DateTime  @updatedAt
 }
 
 model Price {
-  id        String    @id
+  id        String    @id @default(uuid())
   original  Float
   discount  Float
   final     Float
   Service   Service[]
   createdAt DateTime  @default(now())
-  updatedAt DateTime
+  updatedAt DateTime  @updatedAt
 }
 
 model Service {
-  id            String      @id
+  id            String      @id @default(uuid())
   name          String
   description   String
   locationId    String
@@ -64,15 +64,15 @@ model Service {
   subCategoryId String
   SubCategory   SubCategory @relation(fields: [subCategoryId], references: [id])
   createdAt     DateTime    @default(now())
-  updatedAt     DateTime
+  updatedAt     DateTime    @updatedAt
 }
 
 model User {
-  id        String   @id
+  id        String   @id @default(uuid())
   name      String?
   email     String   @unique
   password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime
   pushToken String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
