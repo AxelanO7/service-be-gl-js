@@ -1,15 +1,14 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { SubCategoryService } from './sub-category.service';
-import { CreateSubCategoryDto } from './dto/create-sub-category.dto';
 
 @Controller('sub-category')
 export class SubCategoryController {
   constructor(private readonly subCategoryService: SubCategoryService) {}
 
-  @Post()
-  create(@Body() createSubCategoryDto: CreateSubCategoryDto) {
-    return this.subCategoryService.create(createSubCategoryDto);
-  }
+  // @Post()
+  // create(@Body() createSubCategoryDto: CreateSubCategoryDto) {
+  //   return this.subCategoryService.create(createSubCategoryDto);
+  // }
 
   @Get()
   findAll() {
