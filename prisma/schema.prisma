@@ -34,7 +34,6 @@ model Price {
   original  Float
   discount  Float
   final     Float
-  price     Float
   createdAt DateTime  @default(now())
   updatedAt DateTime
   Service   Service[]
