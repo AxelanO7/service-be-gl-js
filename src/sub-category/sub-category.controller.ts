@@ -17,18 +17,18 @@ export class SubCategoryController {
     return this.subCategoryService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.subCategoryService.findOne(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.subCategoryService.findOne(id);
+  // }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSubCategoryDto: UpdateSubCategoryDto) {
-    return this.subCategoryService.update(id, updateSubCategoryDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateSubCategoryDto: UpdateSubCategoryDto) {
+  //   return this.subCategoryService.update(id, updateSubCategoryDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.subCategoryService.remove(id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.subCategoryService.remove(id);
+  // }
 }

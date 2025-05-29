@@ -25,18 +25,18 @@ export class PriceController {
     return this.priceService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.priceService.findOne(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.priceService.findOne(id);
+  // }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePriceDto: UpdatePriceDto) {
-    return this.priceService.update(id, updatePriceDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updatePriceDto: UpdatePriceDto) {
+  //   return this.priceService.update(id, updatePriceDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.priceService.remove(id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.priceService.remove(id);
+  // }
 }

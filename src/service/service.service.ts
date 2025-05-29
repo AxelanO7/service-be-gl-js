@@ -18,22 +18,22 @@ export class ServiceService {
     return await this.prisma.service.findMany();
   }
 
-  async findOne(id: string) {
-    return await this.prisma.service.findUnique({
-      where: { id },
-    });
-  }
+  // async findOne(id: string) {
+  //   return await this.prisma.service.findUnique({
+  //     where: { id },
+  //   });
+  // }
 
-  async update(id: string, updateServiceDto: UpdateServiceDto) {
-    return await this.prisma.service.update({
-      where: { id },
-      data: updateServiceDto as Prisma.ServiceUpdateInput,
-    });
-  }
+  // async update(id: string, updateServiceDto: UpdateServiceDto) {
+  //   return await this.prisma.service.update({
+  //     where: { id },
+  //     data: updateServiceDto as Prisma.ServiceUpdateInput,
+  //   });
+  // }
 
-  async remove(id: string) {
-    return await this.prisma.service.delete({
-      where: { id },
-    });
-  }
+  // async remove(id: string) {
+  //   return await this.prisma.service.delete({
+  //     where: { id },
+  //   });
+  // }
 }

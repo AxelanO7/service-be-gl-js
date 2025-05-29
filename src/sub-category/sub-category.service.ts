@@ -18,22 +18,22 @@ export class SubCategoryService {
     return await this.prisma.subCategory.findMany();
   }
 
-  async findOne(id: string) {
-    return await this.prisma.subCategory.findUnique({
-      where: { id },
-    });
-  }
+  // async findOne(id: string) {
+  //   return await this.prisma.subCategory.findUnique({
+  //     where: { id },
+  //   });
+  // }
 
-  async update(id: string, updateSubCategoryDto: UpdateSubCategoryDto) {
-    return await this.prisma.subCategory.update({
-      where: { id },
-      data: updateSubCategoryDto as Prisma.SubCategoryUpdateInput,
-    });
-  }
+  // async update(id: string, updateSubCategoryDto: UpdateSubCategoryDto) {
+  //   return await this.prisma.subCategory.update({
+  //     where: { id },
+  //     data: updateSubCategoryDto as Prisma.SubCategoryUpdateInput,
+  //   });
+  // }
 
-  async remove(id: string) {
-    return await this.prisma.subCategory.delete({
-      where: { id },
-    });
-  }
+  // async remove(id: string) {
+  //   return await this.prisma.subCategory.delete({
+  //     where: { id },
+  //   });
+  // }
 }

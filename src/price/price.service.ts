@@ -18,22 +18,22 @@ export class PriceService {
     return await this.prisma.price.findMany();
   }
 
-  async findOne(id: string) {
-    return await this.prisma.price.findUnique({
-      where: { id },
-    });
-  }
+  // async findOne(id: string) {
+  //   return await this.prisma.price.findUnique({
+  //     where: { id },
+  //   });
+  // }
 
-  async update(id: string, updatePriceDto: UpdatePriceDto) {
-    return await this.prisma.price.update({
-      where: { id },
-      data: updatePriceDto as Prisma.PriceUpdateInput,
-    });
-  }
+  // async update(id: string, updatePriceDto: UpdatePriceDto) {
+  //   return await this.prisma.price.update({
+  //     where: { id },
+  //     data: updatePriceDto as Prisma.PriceUpdateInput,
+  //   });
+  // }
 
-  async remove(id: string) {
-    return await this.prisma.price.delete({
-      where: { id },
-    });
-  }
+  // async remove(id: string) {
+  //   return await this.prisma.price.delete({
+  //     where: { id },
+  //   });
+  // }
 }
