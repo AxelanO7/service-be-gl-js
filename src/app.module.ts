@@ -9,7 +9,7 @@ import { LocationModule } from './location/location.module';
 import { PriceModule } from './price/price.module';
 
 @Module({
-  imports: [CategoryModule],
+  imports: [CategoryModule, SubCategoryModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
   exports: [PrismaService],
