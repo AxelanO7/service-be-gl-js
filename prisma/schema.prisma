@@ -11,20 +11,20 @@ datasource db {
 model Category {
   id          String        @id
   name        String
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime
   Subcategory Subcategory[]
   Service     Service[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime
 }
 
 model Subcategory {
   id         String    @id
   name       String
-  category   Category  @relation(fields: [categoryId], references: [id])
   categoryId String
+  category   Category  @relation(fields: [categoryId], references: [id])
+  Service    Service[]
   createdAt  DateTime  @default(now())
   updatedAt  DateTime
-  Service    Service[]
 }
 
 model Location {
@@ -36,9 +36,9 @@ model Location {
   state     String
   province  String
   country   String
+  Service   Service[]
   createdAt DateTime  @default(now())
   updatedAt DateTime
-  Service   Service[]
 }
 
 model Price {
@@ -46,25 +46,25 @@ model Price {
   original  Float
   discount  Float
   final     Float
+  Service   Service[]
   createdAt DateTime  @default(now())
   updatedAt DateTime
-  Service   Service[]
 }
 
 model Service {
   id            String      @id
   name          String
-  locationId    String
-  priceId       String
   description   String
+  locationId    String
+  Location      Location    @relation(fields: [locationId], references: [id])
+  priceId       String
+  Price         Price       @relation(fields: [priceId], references: [id])
+  categoryId    String
+  Category      Category    @relation(fields: [categoryId], references: [id])
+  subcategoryId String
+  Subcategory   Subcategory @relation(fields: [subcategoryId], references: [id])
   createdAt     DateTime    @default(now())
   updatedAt     DateTime
-  Location      Location    @relation(fields: [locationId], references: [id])
-  Price         Price       @relation(fields: [priceId], references: [id])
-  Category      Category    @relation(fields: [categoryId], references: [id])
-  categoryId    String
-  Subcategory   Subcategory @relation(fields: [subcategoryId], references: [id])
-  subcategoryId String
 }
 
 model User {
