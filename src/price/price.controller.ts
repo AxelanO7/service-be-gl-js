@@ -1,20 +1,14 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { PriceService } from './price.service';
-import { CreatePriceDto } from './dto/create-price.dto';
 
 @Controller('price')
 export class PriceController {
   constructor(private readonly priceService: PriceService) {}
 
-  @Post()
-  create(@Body() createPriceDto: CreatePriceDto) {
-    return this.priceService.create(createPriceDto);
-  }
+  // @Post()
+  // create(@Body() createPriceDto: CreatePriceDto) {
+  //   return this.priceService.create(createPriceDto);
+  // }
 
   @Get()
   findAll() {
