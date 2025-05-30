@@ -1,6 +1,15 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { SubCategoryService } from './sub-category.service';
 import { CreateSubCategoryDto } from './dto/create-sub-category.dto';
+import { UpdateSubCategoryDto } from './dto/update-sub-category.dto';
 
 @Controller('sub-category')
 export class SubCategoryController {
@@ -16,18 +25,21 @@ export class SubCategoryController {
     return this.subCategoryService.findAll();
   }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.subCategoryService.findOne(id);
-  // }
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.subCategoryService.findOne(id);
+  }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateSubCategoryDto: UpdateSubCategoryDto) {
-  //   return this.subCategoryService.update(id, updateSubCategoryDto);
-  // }
+  @Patch(':id')
+  update(
+    @Param('id') id: string,
+    @Body() updateSubCategoryDto: UpdateSubCategoryDto,
+  ) {
+    return this.subCategoryService.update(id, updateSubCategoryDto);
+  }
 
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.subCategoryService.remove(id);
-  // }
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.subCategoryService.remove(id);
+  }
 }
