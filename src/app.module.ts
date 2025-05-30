@@ -9,5 +9,6 @@ import { SubCategory } from './sub-category/entities/sub-category.entity';
   imports: [CategoryModule, SubCategory, PrismaModule],
   controllers: [AppController],
   providers: [AppService],
+  exports: [PrismaModule],
 })
 export class AppModule {}
