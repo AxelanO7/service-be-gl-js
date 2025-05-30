@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
 export class CategoryService {
-  // constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
   // async create(createCategoryDto: CreateCategoryDto) {
   //   return await this.prisma.category.create({
   //     data: createCategoryDto as Prisma.CategoryCreateInput,
