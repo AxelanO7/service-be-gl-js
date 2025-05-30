@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateSubCategoryDto } from './dto/create-sub-category.dto';
+import { UpdateSubCategoryDto } from './dto/update-sub-category.dto';
 
 @Injectable()
 export class SubCategoryService {
@@ -17,22 +18,22 @@ export class SubCategoryService {
     return await this.prisma.subCategory.findMany();
   }
 
-  // async findOne(id: string) {
-  //   return await this.prisma.subCategory.findUnique({
-  //     where: { id },
-  //   });
-  // }
+  async findOne(id: string) {
+    return await this.prisma.subCategory.findUnique({
+      where: { id },
+    });
+  }
 
-  // async update(id: string, updateSubCategoryDto: UpdateSubCategoryDto) {
-  //   return await this.prisma.subCategory.update({
-  //     where: { id },
-  //     data: updateSubCategoryDto as Prisma.SubCategoryUpdateInput,
-  //   });
-  // }
+  async update(id: string, updateSubCategoryDto: UpdateSubCategoryDto) {
+    return await this.prisma.subCategory.update({
+      where: { id },
+      data: updateSubCategoryDto as Prisma.SubCategoryUpdateInput,
+    });
+  }
 
-  // async remove(id: string) {
-  //   return await this.prisma.subCategory.delete({
-  //     where: { id },
-  //   });
-  // }
+  async remove(id: string) {
+    return await this.prisma.subCategory.delete({
+      where: { id },
+    });
+  }
 }
