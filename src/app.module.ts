@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { PrismaService } from './prisma.service';
 import { CategoryModule } from './category/category.module';
 import { SubCategoryModule } from './sub-category/sub-category.module';
+import { PriceModule } from './price/price.module';
 
 @Module({
-  imports: [CategoryModule, SubCategoryModule],
+  imports: [CategoryModule, SubCategoryModule, PriceModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
   exports: [PrismaService],
