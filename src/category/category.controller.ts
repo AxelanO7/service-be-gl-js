@@ -1,7 +1,4 @@
-import {
-  Controller,
-  Get,
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { CategoryService } from './category.service';
 
 @Controller('category')
@@ -13,10 +10,10 @@ export class CategoryController {
   //   return this.categoryService.create(createCategoryDto);
   // }
 
-  @Get()
-  findAll() {
-    return this.categoryService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.categoryService.findAll();
+  // }
 
   // @Get(':id')
   // findOne(@Param('id') id: string) {
