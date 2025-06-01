@@ -55,6 +55,7 @@ model Service {
   id            String      @id @default(uuid())
   name          String
   description   String
+  image         String
   locationId    String
   priceId       String
   categoryId    String
