@@ -6,6 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { PriceModule } from './price/price.module';
 import { LocationModule } from './location/location.module';
 import { SubCategoryModule } from './sub-category/sub-category.module';
+import { ServiceModule } from './service/service.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { SubCategoryModule } from './sub-category/sub-category.module';
     SubCategoryModule,
     LocationModule,
     PriceModule,
+    ServiceModule,
     PrismaModule,
   ],
   controllers: [AppController],
